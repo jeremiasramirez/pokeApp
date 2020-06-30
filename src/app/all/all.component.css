@@ -16,3 +16,8 @@
 .example-item {
   height: 50px;
 }
+.between{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

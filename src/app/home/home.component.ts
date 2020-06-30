@@ -25,8 +25,8 @@ export class HomeComponent{
 
 
   }
-  pokemons(){
-
+  redirect(name:string){
+    this.poke.redirect(name)
   }
 
   ok(id:number){

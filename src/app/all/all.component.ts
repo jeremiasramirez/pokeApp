@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component,OnInit } from "@angular/core";
 import { timer, of, Subject } from "rxjs"
 import { take,delay } from "rxjs/operators"
 import { ServicePokemon } from "../services/service.pokemon"
@@ -11,32 +11,44 @@ import { Router } from "@angular/router";
 })
 
 export class AllComponent{
+
   public allPoke: any[] = []
   public items : number[] = [];
-  public obsItem = of(10, 100, 150, 250, 350, 450, 650, 700, 809)
-
+  public obsItem = of(10, 100, 150, 250, 350, 450, 650, 700, 809);
+  public start:number=0;
+  public end:number=10;
+  public cardMedium : number;
   public progress = {
     load: true,
     spinner: true,
     charging: true
   }
+
   public form ={
     value: 10
   }
 
   constructor(public poke:ServicePokemon, public router:Router){
 
-    this.poke.getPoke(809).subscribe(resp => {if(resp)timer(500).subscribe(timing=>this.allPoke.push(resp))},
-                                   (err) => {return err},
-                                   () => {this.progress.spinner=false})
-    this.obsItem.pipe(delay(400)).subscribe( resp =>{ if(resp) this.items.push(resp)},
-                                    (err) => {return err},
-                                    () => {this.progress.charging=false})
-
-
+    this.get()
 
   }
 
+ public  get(){
+    this.poke.getPoke(809).subscribe(resp => {if(resp)timer(500).subscribe(()=>{
+    this.allPoke.push(resp)
+    this.cardMedium = Math.ceil((this.allPoke.length) / 10)
+  }
+    )},
+    (err) => {return err},
+    () => {this.progress.spinner=false; })
+    
+    this.obsItem.pipe(delay(400)).subscribe( resp =>{ if(resp) this.items.push(resp)},
+      (err) => {return err},
+      () => {this.progress.charging=false})
+
+
+  }
     ok(id:number){
 
       timer(400).subscribe(x=>{
@@ -44,4 +56,14 @@ export class AllComponent{
       })
 
     }
+
+    public next(){
+      this.start += 10;
+      this.end += 10;
+    }
+    public back(){
+      this.start -= 10;
+      this.end -= 10;
+    }
+
 }

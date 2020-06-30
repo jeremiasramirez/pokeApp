@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core"
 import { ajax } from "rxjs/ajax"
 import { Subject } from "rxjs"
-import {map, pluck,filter ,delay,take,find, debounceTime} from "rxjs/operators"
+import { pluck ,delay,take} from "rxjs/operators"
+import { Router } from '@angular/router'
 
 
 
@@ -12,32 +13,29 @@ export class ServicePokemon{
     public url : string = "../assets/model/pokedex.json";
 
 
-    constructor(){
+    constructor( public router:Router){
+     
       this.getAll()
 
- 
-
     }
 
-    // getPokemonHome(){
-    // }
-    //
-    // searchPokemon(data:any=null){
-    //
-    // }
-
+    
+    redirect(name:string){
+      this.router.navigate([name])
+    }
+   
     getAll(){
-          // timer(1500).subscribe(timing=>{this.progress.spinner=false })
+      // timer(1500).subscribe(timing=>{this.progress.spinner=false })
 
-         ajax.get(this.url).pipe(pluck('response')).subscribe((resp)=>{
-          if(resp){
-            for(let i=0; i<resp.length; i++){
-                this.obsData.next(resp[i])
-            }
-          }
+     return ajax.get(this.url).pipe(pluck('response')).subscribe((resp)=>{
+      if(resp){
+        for(let i=0; i<resp.length; i++){
+            this.obsData.next(resp[i])
+        }
+      }
 
-        })
-    }
+    })
+}
 
 
     getPoke(size:number=10){
@@ -46,8 +44,7 @@ export class ServicePokemon{
           delay(1000)
 
         )
-      // .subscribe(resp=>{this.allPoke.push(resp)}, (err)=>{return err}, ()=>{this.progress.spinner=false})
-
+   
     }
     forId( ){
 

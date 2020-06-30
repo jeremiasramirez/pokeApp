@@ -1,22 +1,19 @@
 
 <form class="form inTop">
     <input type="text" name="search" value={{form.value}} placeholder="Pokemon" class="large" #searchs autocomplete="false">
-    <button type="button" name="button" class="btn--blue minmin" mat-button (click)="search(searchs.value)">Search<i class="fas fa-search"></i></button>
+    <button type="button" name="button" class="btn--red minmin" mat-button (click)="search(searchs.value)">Search<i class="fas fa-search"></i></button>
 </form>
+<!--
 <div class="alert--error inTop" *ngIf="!form.value">
   No se ha especificado una busqueda.
-</div>
+</div>-->
 <!-- progress -->
 <!-- <article class="responsive__progress inTop" *ngIf="progress.load">
   <mat-spinner></mat-spinner>
 </article>
  -->
 
-
-<div class="alert--success in" *ngIf="returnSearch!=''&&!progress.load">
-    Resultados
-</div>
-<br>
+ 
 <br>
 <br>
 <section class="container__pokemons__home">

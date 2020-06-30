@@ -7,7 +7,7 @@
 
 
 
-    <div class="card" *ngFor="let card__ of pokemonsArray"  matRipple (click)="ok(card__.id)">
+    <div class="card" *ngFor="let card__ of pokemonsArray|slice:0:8"  matRipple (click)="ok(card__.id)">
       <div class="theme--red">
           <h1 class="">{{ card__.name.english }}</h1>
       </div>
@@ -19,3 +19,6 @@
 
 
 </section>
+<div class="responsive" *ngIf="!spinner.load">
+  <button class="btn--red large" (click)="redirect('all')" mat-button>Explore</button>
+</div>

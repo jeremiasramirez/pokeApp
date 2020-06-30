@@ -11,7 +11,7 @@
 
 
 
-  <div class="card in" *ngFor="let card of allPoke | slice:start:end"  matRipple  >
+  <div class="card inTop" *ngFor="let card of allPoke | slice:start:end"  matRipple  >
     <div class="theme--red">
         <h1 class="">{{card.name.english}}</h1>
     </div>
@@ -25,9 +25,10 @@
 </section>
 
 
-
+ 
 <div class="between" *ngIf="!progress.spinner">
-  <button mat-button (click)="back()">Back</button>
-  <p>{{start}} of {{cardMedium}}</p>
-  <button mat-button (click)="next()">Next</button>
+  
+  <i class="fas fa-circle-notch"></i>
+  <button [disabled]="progress.spinner" mat-button (click)="next()">Cargar mas..</button>
 </div>
+    

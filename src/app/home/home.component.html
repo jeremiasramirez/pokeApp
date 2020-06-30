@@ -1,0 +1,21 @@
+<!-- progress -->
+<article class="container__pokemons__home inTop tops" *ngIf="spinner.load">
+  <mat-spinner></mat-spinner>
+</article>
+
+<section class="container__pokemons__home inTop" *ngIf="!spinner.load">
+
+
+
+    <div class="card" *ngFor="let card__ of pokemonsArray"  matRipple (click)="ok(card__.id)">
+      <div class="theme--red">
+          <h1 class="">{{ card__.name.english }}</h1>
+      </div>
+      <br>
+      <img src="assets/img/images/{{card__.id}}.png" alt="{{card__.name.english}}" class="card--img">
+      <br>
+      <br>
+    </div>
+
+
+</section>

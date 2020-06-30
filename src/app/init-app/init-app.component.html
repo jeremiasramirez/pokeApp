@@ -1,0 +1,18 @@
+
+
+<!-- progress -->
+<article class="container__pokemons__home inBottom tops" *ngIf="spinner.load">
+  <mat-spinner color="accent"></mat-spinner>
+</article>
+
+<div class="container__pokemons__home inTop in" *ngIf="!spinner.text || !spinner.load">
+  <h2 class="title text--white">Bienvenidos al portal de pokemones <i class="fas fa-smile-beam text--blue letter2 inLeft"></i></h2>
+</div>
+<div class="responsive" *ngIf="!spinner.load">
+    <img src="assets/pokemonHome.png" alt="poke home" class="inTop blurtime" >
+</div>
+
+
+<div class="container__pokemons__home inBottom" *ngIf="!spinner.load">
+  <button type="button" name="button" class="min btn--blue" mat-button (click)="goHome()">Go<i class="fas fa-location-arrow"></i></button>
+</div>

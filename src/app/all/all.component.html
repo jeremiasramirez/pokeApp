@@ -1,0 +1,30 @@
+
+<div class="right"  *ngIf="progress.spinner">
+
+   <button class="btn--red min">Todos los pokemones <i class="fas fa-spinner"></i></button>
+
+</div>
+
+
+<article class="container__pokemons__home inTop" *ngIf="progress.spinner">
+  <mat-spinner color="primary"></mat-spinner>
+</article>
+
+
+<section class="container__pokemons__home inTop" *ngIf="!progress.spinner">
+
+
+
+
+  <div class="card" *ngFor="let card__ of allPoke"  matRipple (click)="ok(card__.id)">
+    <div class="theme--red">
+        <h1 class="">{{ card__.name.english }}</h1>
+    </div>
+    <br>
+    <img src="assets/img/images/{{card__.id}}.png" alt="{{card__.name.english}}" class="card--img">
+    <br>
+    <br>
+  </div>
+
+
+</section>

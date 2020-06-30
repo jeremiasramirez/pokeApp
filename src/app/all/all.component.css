@@ -1,0 +1,18 @@
+.right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.height{
+  height: 50%;
+  width: 100%
+}
+.example-viewport {
+  height: 200px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.example-item {
+  height: 50px;
+}

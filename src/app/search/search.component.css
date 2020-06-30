@@ -1,0 +1,16 @@
+.responsive__progress{
+  display: flex;
+  margin-top: .3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.tops{
+  position: fixed;
+  top: -15px;
+  left: -6px;
+
+  width: 100vw;
+  margin:0;
+  padding:0;
+}

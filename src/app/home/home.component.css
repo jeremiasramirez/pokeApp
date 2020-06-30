@@ -6,6 +6,11 @@
    animation: colorate 1s infinite linear;
    margin-top: 2em;
 }
+.mat-spinner{
+  display:flex;
+  justify-content: center;
+  transform:scale(.4)
+}
 @keyframes colorate {
    to{
      transform: rotate(360deg);

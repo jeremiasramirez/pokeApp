@@ -11,7 +11,7 @@
 
 
 
-  <div class="card inTop" *ngFor="let card of allPoke | slice:0:end"  matRipple  >
+  <div class="card inTop" *ngFor="let card of allPoke | slice:0:end"  matRipple (click)="ok(card.id)" >
     <div class="theme--red">
         <h1 class="">{{card.name.english}}</h1>
     </div>

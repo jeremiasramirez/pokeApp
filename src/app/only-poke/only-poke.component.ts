@@ -10,9 +10,11 @@ import { delay } from "rxjs/operators";
     providers: [ServicePokemon]
 })
 export class OnlyPokeComponent  {
-  public poke : any[] = [];
+  public poke;
   @Input("receivedPoke") received;
-
+  public progress ={
+    spinner:true
+  }
   
   constructor(
     public serv:ServicePokemon,
@@ -22,7 +24,7 @@ export class OnlyPokeComponent  {
     this.param.params.subscribe(param=>{
 
           this.serv.forId().pipe(
-            delay(300)
+            delay(10)
           ).subscribe(resp=>{
 
             for(let i=0; i<resp.length; i++){
@@ -32,10 +34,9 @@ export class OnlyPokeComponent  {
                 }
 
             }
+ 
 
-            console.log(this.poke);
-
-          })
+          }, (err)=>{return err}, ()=>{this.progress.spinner=false})
     })
 
 
@@ -43,3 +44,5 @@ export class OnlyPokeComponent  {
 
 
 }
+
+ 

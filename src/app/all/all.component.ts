@@ -42,7 +42,7 @@ export class AllComponent{
     (err) => {return err},
     () => {this.progress.spinner=false; })
     
-    this.obsItem.pipe(delay(400)).subscribe( resp =>{ if(resp) this.items.push(resp)},
+    this.obsItem.pipe(delay(100)).subscribe( resp =>{ if(resp) this.items.push(resp)},
       (err) => {return err},
       () => {this.progress.charging=false})
 
@@ -50,7 +50,7 @@ export class AllComponent{
   }
     ok(id:number){
 
-      timer(400).subscribe(x=>{
+      timer(200).subscribe(x=>{
           if (id) this.router.navigate(["search/poke", id]);
       })
 

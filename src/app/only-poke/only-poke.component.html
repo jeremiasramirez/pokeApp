@@ -7,48 +7,53 @@
       <div class="container__data__title  ">
             <div class="container__data__title">
 
-                <img src="../../assets/img/images/1.png" alt="img" class="avatar">
-                <h1>Bulbasaur</h1>
+                <img src="../../assets/img/images/{{poke.id}}.png" alt="img" class="avatar">
+                <h1>{{ poke.name.english }}</h1>
             </div>
             <p><span  matRipple class="fas fa-arrow-down"></span> </p>
       </div>
   
- <!--
-        <div class="spinner" style="margin-top: -10px;  display: flex;justify-content: center;"  >
+ 
+        <div class="spinner" style="margin-top: -10px;  display: flex;justify-content: center;"  *ngIf="progress.spinner">
             <mat-spinner color="accent"></mat-spinner>
         </div>
-  -->
-      <article class="container__global__content"  >
+  
+      <article class="container__global__content" *ngIf="!progress.spinner" >
   
    
           <div class="container__globa__subcontent inBottoms  ">
-            <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-            <p class="data">  3 </p>
+            <p ><i class="separateIcon fas fa-arrow-right separateIcon"  ></i>  Attack</p>
+            <p class="data">  {{poke.base.Attack}} </p>
       </div>
       <div class="container__globa__subcontent inBottoms  ">
-        <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-        <p class="data">  3 </p>
+        <p ><i class="separateIcon fas fa-arrow-right separateIcon"  ></i> Defense</p>
+        <p class="data">  {{poke.base.Defense}} </p>
   </div>
+
+   <div class="container__globa__subcontent inBottoms  ">
+        <p ><i class="separateIcon fas fa-arrow-right separateIcon"  ></i> Special defense</p>
+        <p class="data">  {{poke.base.Sp_Defense}} </p>
+   </div>
+   
+
+   <div class="container__globa__subcontent inBottoms  ">
+        <p><i class="separateIcon fas fa-arrow-right separateIcon"  ></i> Special attack</p>
+        <p class="data">  {{poke.base.Sp_Attack}} </p>
+    </div>
+
   <div class="container__globa__subcontent inBottoms  ">
-    <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-    <p class="data">  3 </p>
+    <p ><i class="separateIcon fas fa-arrow-right separateIcon"  ></i> HP</p>
+    <p class="data"> {{poke.base.HP}} </p>
 </div>
 <div class="container__globa__subcontent inBottoms  ">
-    <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-    <p class="data">  3 </p>
+    <p ><i class="separateIcon fas fa-arrow-right separateIcon"  ></i> Speed</p>
+    <p class="data"> {{poke.base.Speed}} </p>
 </div>
 <div class="container__globa__subcontent inBottoms  ">
-    <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-    <p class="data">  3 </p>
+    <p ><i class="separateIcon fas fa-arrow-right separateIcon"  ></i> Type</p>
+    <p class="data">  {{poke.type[0]}} </p>
 </div>
-<div class="container__globa__subcontent inBottoms  ">
-    <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-    <p class="data">  3 </p>
-</div>
-<div class="container__globa__subcontent inBottoms  ">
-    <p ><i class="separateIcon fas fa-user-plus separateIcon"  ></i> Nuevo confirmados</p>
-    <p class="data">  7 </p>
-</div>    
+   
            
       </article>
   

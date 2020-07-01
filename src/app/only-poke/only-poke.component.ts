@@ -1,4 +1,4 @@
-import { Component  } from '@angular/core';
+import { Component, Input  } from '@angular/core';
 import { ServicePokemon } from "../services/service.pokemon"
 import { Router, ActivatedRoute } from "@angular/router"
 import { timer } from "rxjs";
@@ -11,6 +11,9 @@ import { delay } from "rxjs/operators";
 })
 export class OnlyPokeComponent  {
   public poke : any[] = [];
+  @Input("receivedPoke") received;
+
+  
   constructor(
     public serv:ServicePokemon,
     public param:ActivatedRoute,

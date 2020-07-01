@@ -25,13 +25,13 @@ export class HomeComponent{
 
 
   }
-  redirect(name:string){
-    this.poke.redirect(name)
+  public redirect(name:string){
+    timer(500).subscribe(()=>this.poke.redirect(name))
   }
 
-  ok(id:number){
+  public ok(id:number){
 
-    timer(400).subscribe(x=>{
+    timer(40).subscribe(x=>{
         if (id) this.router.navigate(["search/poke", id]);
     })
 

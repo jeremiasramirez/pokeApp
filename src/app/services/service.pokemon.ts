@@ -41,7 +41,7 @@ export class ServicePokemon{
     getPoke(size:number=10){
         return  this.obsData.pipe(
           take(size),
-          delay(1000)
+          delay(10)
 
         )
    

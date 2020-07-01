@@ -13,6 +13,11 @@
     background-color: rgba(0%, 0%, 0%, 90%);
 
 }
+.avatar{
+  width: 40px;
+  border:1px solid white;
+  border-radius: 50%;
+}
 .container__global__content{
     display: flex;
     align-items: center;

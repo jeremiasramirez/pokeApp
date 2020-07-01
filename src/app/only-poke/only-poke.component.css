@@ -1,0 +1,126 @@
+ .container__float{
+    overflow-y:hidden;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 200;
+    position: fixed;
+    transition: 1s;
+    top: 0;
+    background-color: rgba(0%, 0%, 0%, 90%);
+
+}
+.container__global__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 700px;
+    
+    margin-top: -.3em;
+ 
+}
+.separateIcon{
+    padding-right:5px
+}
+
+.container__globa__subcontent{
+    display: flex;
+    margin: .2em .3em;
+    padding: .2em;
+    width: 100%;
+    max-width: 700px;
+    margin-left: -4px;
+    height: 50px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+
+}
+
+
+.fa-arrow-down{
+  transform: scale(1.1);
+  padding: 13px;
+  cursor:pointer;
+  margin-left: 10px;
+  border-radius: 50%;
+  display:inline-block !important;
+ 
+  background-color: rgb(1, 1, 99);
+}
+
+  .container__float *{
+    color:white;
+  }
+.container__data__float{
+   border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  margin-top: -.4em;
+  overflow-y:hidden;
+  max-width: 700px;
+  position:absolute;
+  bottom:0;
+  
+   
+  max-width: 600px;
+
+  z-index:10;
+}
+@media screen and (max-width: 350px) {
+    .container__data__title {
+      transform:scale(.9);
+      margin-top: 1em;
+    }
+    .container__global__content{
+      transform:scale(.9);
+    }
+    .container__global__content{
+        margin-top: 1em;
+    }
+}
+ 
+.container__data__content{
+
+  display:flex;
+  justify-content:space-between;
+}
+ 
+.container__data__title h1{
+    font-size: 20px;
+  }
+.container__data__title{
+  display:flex;
+  padding: .2em .9em; 
+  align-items:center;
+  justify-content: space-between;
+}
+.up{
+  animation: ups .5s linear;
+}
+@keyframes ups{
+  from{
+      transition: .5s;
+      transform:translateY(100%);
+  }
+  to{
+    transition: .5s;
+    transform:translateY(0);
+  }
+}
+.inBottoms{
+  animation: bottoms 1s  linear;
+}
+@keyframes bottoms{
+  from{
+      opacity: 0;
+  }
+  to{
+   opacity: 1;
+  }
+}
+  
+ 
